@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meenakshi Inn - Hotel & Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <div class="logo">&#21328; Meenakshi Inn</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#rooms">Rooms</a></li>
+                <li><a href="#restaurant">Restaurant</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#login" class="login-btn">Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Pages Container -->
+    <div id="pages-container">
+        <!-- Home Page -->
+        <section id="home" class="page active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Welcome to Meenakshi Inn</h1>
+                    <p>Experience luxury and taste in one place</p>
+                    <div class="hero-buttons">
+                        <a href="#rooms" class="btn primary-btn">Book a Room</a>
+                        <a href="#restaurant" class="btn secondary-btn">Visit Restaurant</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Services</h2>
+                    <p>Discover what makes us special</p>
+                </div>
+
+                <div class="services">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="./assets/room-1.jpg" alt="Luxury Rooms" width="200px">
+                        </div>
+                        <h3>Luxury Rooms</h3>
+                        <p>Experience comfort and elegance in our beautifully designed rooms.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="./assets/fine dining.jpg" alt="Fine Dining"width="200px">
+                        </div>
+                        <h3>Fine Dining</h3>
+                        <p>Savor exquisite cuisine prepared by our master chefs.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="./assets/artisan bakery.jpg" width="200px" alt="Bakery">
+                        </div>
+                        <h3>Artisan Bakery</h3>
+                        <p>Indulge in freshly baked goods made with premium ingredients.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="./assets/event hosting.jpg" width="220px" alt="Events">
+                        </div>
+                        <h3>Event Hosting</h3>
+                        <p>Perfect venues for your special occasions and celebrations.</p>
+                    </div>
+                </div>
+
+                <div class="testimonials">
+                    <div class="section-title">
+                        <h2>Guest Testimonials</h2>
+                        <p>What our guests say about us</p>
+                    </div>
+
+                    <div class="testimonial-slider">
+                        <div class="testimonial-slide active">
+                            <div class="testimonial-content">
+                                <p>"The rooms were luxurious and the restaurant food was exceptional. Will definitely return!"</p>
+                                <div class="testimonial-author">- Rajesh Kumar</div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-content">
+                                <p>"Their bakery items are to die for! The pastries are some of the best I've ever had."</p>
+                                <div class="testimonial-author">- Priya Sharma</div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-content">
+                                <p>"Perfect place for both business and leisure. The staff is incredibly attentive."</p>
+                                <div class="testimonial-author">- James Wilson</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-dots">
+                        <span class="dot active" data-index="0"></span>
+                        <span class="dot" data-index="1"></span>
+                        <span class="dot" data-index="2"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rooms Page -->
+        <section id="rooms" class="page">
+            <div class="page-header" id="roomlayout">
+                <div class="container">
+                    <h1>Our Rooms</h1>
+                    <p>Comfort meets luxury in our thoughtfully designed accommodations</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="room-filters">
+                    <button class="filter-btn active" data-filter="all">All Rooms</button>
+                    <button class="filter-btn" data-filter="standard">Standard</button>
+                    <button class="filter-btn" data-filter="deluxe">Deluxe</button>
+                    <button class="filter-btn" data-filter="suite">Suites</button>
+                </div>
+
+                <div class="rooms-grid">
+                    <div class="room-card" data-category="standard">
+                        <div class="room-image">
+                            <img src="./assets/room-1.jpg" width="200px" alt="Standard Room">
+                            <div class="room-price">₹3,500/night</div>
+                        </div>
+                        <div class="room-details">
+                            <h3>Standard Room</h3>
+                            <div class="room-features">
+                                <span>1 King Bed</span>
+                                <span>Free WiFi</span>
+                                <span>32 sq.m</span>
+                            </div>
+                            <p>Comfortable room with all essential amenities for a pleasant stay.</p>
+                            <button class="btn primary-btn book-room-btn" data-room="Standard Room" data-price="3500">Book Now</button>
+                        </div>
+                    </div>
+
+                    <div class="room-card" data-category="deluxe">
+                        <div class="room-image">
+                            <img src="./assets/room-2.jpg" width="200px" alt="Deluxe Room">
+                            <div class="room-price">₹5,000/night</div>
+                        </div>
+                        <div class="room-details">
+                            <h3>Deluxe Room</h3>
+                            <div class="room-features">
+                                <span>1 King Bed</span>
+                                <span>Free WiFi</span>
+                                <span>40 sq.m</span>
+                            </div>
+                            <p>Spacious room with premium amenities and city view.</p>
+                            <button class="btn primary-btn book-room-btn" data-room="Deluxe Room" data-price="5000">Book Now</button>
+                        </div>
+                    </div>
+
+                    <div class="room-card" data-category="suite">
+                        <div class="room-image">
+                            <img src="./assets/room-3.jpg" width="200px" alt="Executive Suite">
+                            <div class="room-price">₹8,000/night</div>
+                        </div>
+                        <div class="room-details">
+                            <h3>Executive Suite</h3>
+                            <div class="room-features">
+                                <span>1 King Bed</span>
+                                <span>Free WiFi</span>
+                                <span>60 sq.m</span>
+                            </div>
+                            <p>Luxurious suite with separate living area and premium amenities.</p>
+                            <button class="btn primary-btn book-room-btn" data-room="Executive Suite" data-price="8000">Book Now</button>
+                        </div>
+                    </div>
+
+                    <div class="room-card" data-category="suite">
+                        <div class="room-image">
+                            <img src="./assets/room-4.jpg" width="200px" alt="Presidential Suite">
+                            <div class="room-price">₹15,000/night</div>
+                        </div>
+                        <div class="room-details">
+                            <h3>Presidential Suite</h3>
+                            <div class="room-features">
+                                <span>2 King Beds</span>
+                                <span>Free WiFi</span>
+                                <span>120 sq.m</span>
+                            </div>
+                            <p>Our most luxurious accommodation with panoramic views and butler service.</p>
+                            <button class="btn primary-btn book-room-btn" data-room="Presidential Suite" data-price="15000">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Restaurant Page -->
+        <section id="restaurant" class="page">
+            <div class="page-header" id="restaurantlayout">
+                <div class="container">
+                    <h1>Our Restaurant</h1>
+                    <p>Exquisite dining experience with a blend of traditional and contemporary cuisine</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="section-title">
+                    <h2>Menu Categories</h2>
+                </div>
+
+                <div class="menu-tabs">
+                    <button class="menu-tab active" data-tab="main-course">Main Course</button>
+                    <button class="menu-tab" data-tab="starters">Starters</button>
+                    <button class="menu-tab" data-tab="desserts">Desserts</button>
+                    <button class="menu-tab" data-tab="bakery">Bakery</button>
+                    <button class="menu-tab" data-tab="beverages">Beverages</button>
+                </div>
+
+                <div class="menu-content">
+                    <div class="menu-tab-content active" id="main-course">
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="./assets/butterchicken.jpg" alt="Butter Chicken">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h3>Butter Chicken</h3>
+                                    <p>Tender chicken cooked in a rich tomato and butter sauce with aromatic spices.</p>
+                                    <div class="menu-item-info">
+                                        <span class="price">₹350</span>
+                                        <span class="calories">450 cal</span>
+                                    </div>
+                                    <button class="btn add-to-cart" data-item="Butter Chicken" data-price="350" data-calories="450">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="./assets/pannertm.jpg" alt="Paneer Tikka Masala">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h3>Paneer Tikka Masala</h3>
+                                    <p>Grilled cottage cheese cubes in a spiced tomato gravy.</p>
+                                    <div class="menu-item-info">
+                                        <span class="price">₹300</span>
+                                        <span class="calories">380 cal</span>
+                                    </div>
+                                    <button class="btn add-to-cart" data-item="Paneer Tikka Masala" data-price="300" data-calories="380">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="./assets/chickenbiriyani.jpg" alt="Biryani">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h3>Chicken Biryani</h3>
+                                    <p>Fragrant basmati rice cooked with tender chicken and aromatic spices.</p>
+                                    <div class="menu-item-info">
+                                        <span class="price">₹320</span>
+                                        <span class="calories">520 cal</span>
+                                    </div>
+                                    <button class="btn add-to-cart" data-item="Chicken Biryani" data-price="320" data-calories="520">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="./assets/vegetable curry" alt="Vegetable Curry">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h3>Vegetable Curry</h3>
+                                    <p>Mixed vegetables cooked in a flavorful curry sauce.</p>
+                                    <div class="menu-item-info">
+                                        <span class="price">₹250</span>
+                                        <span class="calories">320 cal</span>
+                                    </div>
+                                    <button class="btn add-to-cart" data-item="Vegetable Curry" data-price="250" data-calories="320">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-tab-content" id="starters">
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="./assets/panner tikka.jpg" alt="Paneer Tikka">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h3>Paneer Tikka</h3>
+                                    <p>Marinated cottage cheese grilled to perfection.</p>
+                                    <div class="menu-item-info">
+                                        <span class="price">₹280</span>
+                                        <span class="calories">320 cal</span>
+                                    </div>
+                                    <button class="btn add-to-cart" data-item="Paneer Tikka" data-price="280" data-calories="320">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="./assets/chicken tikka" alt="Chicken Tikka">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h3>Chicken Tikka</h3>
+                                    <p>Tender chicken pieces marinated and grilled in tandoor.</p>
+                                    <div class="menu-item-info">
+                                        <span class="price">₹320</span>
+                                        <span class="calories">350 cal</span>
+                                    </div>
+                                    <button class="btn add-to-cart" data-item="Chicken Tikka" data-price="320" data-calories="350">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="./assets/samosa.jpg" alt="Vegetable Samosa">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h3>Vegetable Samosa</h3>
+                                    <p>Crispy pastry filled with spiced potatoes and peas.</p>
+                                    <div class="menu-item-info">
+                                        <span class="price">₹150</span>
+                                        <span class="calories">280 cal</span>
+                                    </div>
+                                    <button class="btn add-to-cart" data-item="Vegetable Samosa" data-price="150" data-calories="280">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="./assets/onion bhaji.jpg" alt="Onion Bhaji">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h3>Onion Bhaji</h3>
+                                    <p>Crispy onion fritters with Indian spices.</p>
+                                    <div class="menu-item-info">
+                                        <span class="price">₹180</span>
+                                        <span class="calories">250 cal</span>
+                                    </div>
+                                    <button class="btn add-to-cart" data-item="Onion Bhaji" data-price="180" data-calories="250">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-tab-content" id="desserts">
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="./assets/gulab jamun.jpg" alt="Gulab Jamun">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h3>Gulab Jamun</h3>
+                                    <p>Soft milk dumplings soaked in rose-flavored syrup.</p>
+                                    <div class="menu-item-info">
+                                        <span class="price">₹150</span>
+                                        <span class="calories">320 cal</span>
+                                    </div>
+                                    <button class="btn add-to-cart" data-item="Gulab Jamun" data-price="150" data-calories="320">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="./assets/rasamalai.avif" alt="Rasmalai">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h3>Rasmalai</h3>
+                                    <p>Soft cheese patties in sweetened, thickened milk.</p>
+                                    <div class="menu-item-info">
+                                        <span class="price">₹180</span>
+                                        <span class="calories">350 cal</span>
+                                    </div>
+                                    <button class="btn add-to-cart" data-item="Rasmalai" data-price="180" data-calories="350">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="./assets/kheer.avif" alt="Kheer">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h3>Kheer</h3>
+                                    <p>Traditional rice pudding with nuts and cardamom.</p>
+                                    <div class="menu-item-info">
+                                        <span class="price">₹160</span>
+                                        <span class="calories">280 cal</span>
+                                    </div>
+                                    <button class="btn add-to-cart" data-item="Kheer" data-price="160" data-calories="280">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="./assets/khulfi.jpg" alt="Kulfi">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h3>Kulfi</h3>
+                                    <p>Traditional Indian ice cream with pistachios and saffron.</p>
+                                    <div class="menu-item-info">
+                                        <span class="price">₹170</span>
+                                        <span class="calories">300 cal</span>
+                                    </div>
+                                    <button class="btn add-to-cart" data-item="Kulfi" data-price="170" data-calories="300">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-tab-content" id="bakery">
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="./assets/choco truffle cake.jpg" alt="Chocolate Cake">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h3>Chocolate Truffle Cake</h3>
+                                    <p>Rich chocolate cake with ganache frosting.</p>
+                                    <div class="menu-item-info">
+                                        <span class="price">₹280</span>
+                                        <span class="calories">420 cal</span>
+                                    </div>
+                                    <button class="btn add-to-cart" data-item="Chocolate Truffle Cake" data-price="280" data-calories="420">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="./assets/fruit danish.avif" alt="Fruit Danish">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h3>Fruit Danish</h3>
+                                    <p>Flaky pastry topped with seasonal fruits and custard.</p>
+                                    <div class="menu-item-info">
+                                        <span class="price">₹120</span>
+                                        <span class="calories">280 cal</span>
+                                    </div>
+                                    <button class="btn add-to-cart" data-item="Fruit Danish" data-price="120" data-calories="280">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="./assets/butter croissant.jpg" alt="Croissant">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h3>Butter Croissant</h3>
+                                    <p>Classic French pastry with a buttery, flaky texture.</p>
+                                    <div class="menu-item-info">
+                                        <span class="price">₹90</span>
+                                        <span class="calories">240 cal</span>
+                                    </div>
+                                    <button class="btn add-to-cart" data-item="Butter Croissant" data-price="90" data-calories="240">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="./assets/choco chip cookies.jpg" alt="Cookies">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h3>Chocolate Chip Cookies</h3>
+                                    <p>Freshly baked cookies with chocolate chips.</p>
+                                    <div class="menu-item-info">
+                                        <span class="price">₹80</span>
+                                        <span class="calories">200 cal</span>
+                                    </div>
+                                    <button class="btn add-to-cart" data-item="Chocolate Chip Cookies" data-price="80" data-calories="200">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-tab-content" id="beverages">
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="./assets/masala chai.webp" alt="Masala Chai">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h3>Masala Chai</h3>
+                                    <p>Traditional Indian spiced tea with milk.</p>
+                                    <div class="menu-item-info">
+                                        <span class="price">₹80</span>
+                                        <span class="calories">120 cal</span>
+                                    </div>
+                                    <button class="btn add-to-cart" data-item="Masala Chai" data-price="80" data-calories="120">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="./assets/mango lassi.webp" alt="Mango Lassi">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h3>Mango Lassi</h3>
+                                    <p>Refreshing yogurt drink with sweet mango.</p>
+                                    <div class="menu-item-info">
+                                        <span class="price">₹120</span>
+                                        <span class="calories">180 cal</span>
+                                    </div>
+                                    <button class="btn add-to-cart" data-item="Mango Lassi" data-price="120" data-calories="180">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="./assets/fresh lime soda.jpg" alt="Fresh Lime Soda">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h3>Fresh Lime Soda</h3>
+                                    <p>Refreshing lime juice with soda water, sweet or salty.</p>
+                                    <div class="menu-item-info">
+                                        <span class="price">₹90</span>
+                                        <span class="calories">80 cal</span>
+                                    </div>
+                                    <button class="btn add-to-cart" data-item="Fresh Lime Soda" data-price="90" data-calories="80">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="./assets/Cold-Coffee.png" alt="Cold Coffee">
+                                </div>
+                                <div class="menu-item-details">
+                                    <h3>Cold Coffee</h3>
+                                    <p>Chilled coffee blended with ice cream.</p>
+                                    <div class="menu-item-info">
+                                        <span class="price">₹150</span>
+                                        <span class="calories">220 cal</span>
+                                    </div>
+                                    <button class="btn add-to-cart" data-item="Cold Coffee" data-price="150" data-calories="220">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cart-section">
+                    <div class="section-title">
+                        <h2>Your Order</h2>
+                    </div>
+                    <div id="cart-items">
+                        <p class="empty-cart-message">Your cart is empty</p>
+                    </div>
+                    <div class="cart-summary">
+                        <div class="cart-total">
+                            <span>Total:</span>
+                            <span id="cart-total-price">₹0</span>
+                        </div>
+                        <div class="cart-calories">
+                            <span>Total Calories:</span>
+                            <span id="cart-total-calories">0 cal</span>
+                        </div>
+                        <button class="btn primary-btn" id="reserve-table-btn">Reserve Table & Order</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about" class="page">
+            <div class="page-header" id="aboutlayout">
+                <div class="container">
+                    <h1>About Us</h1>
+                    <p>Our story, mission, and values</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="./assets/about.webp" alt="Meenakshi Inn">
+                    </div>
+                    <div class="about-text">
+                        <h2>Our Story</h2>
+                        <p>Founded in 1995, Meenakshi Inn has been a symbol of luxury and hospitality in the heart of the city. What started as a small family-owned restaurant has evolved into a premier hotel and dining destination.</p>
+                        <p>Our commitment to excellence, attention to detail, and passion for creating memorable experiences have earned us a reputation  attention to detail, and passion for creating memorable experiences have earned us a reputation as one of the finest establishments in the region.</p>
+                        <p>Today, Meenakshi Inn continues to uphold its tradition of hospitality while embracing modern amenities and innovative culinary techniques to provide our guests with an unforgettable experience.</p>
+                    </div>
+                </div>
+
+                <div class="about-features">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <img src="./assets/about.jpg" width="100%" alt="Quality">
+                        </div>
+                        <h3>Quality</h3>
+                        <p>We use only the finest ingredients and materials to ensure exceptional quality in everything we offer.</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <img src="./assets/service.jpg" width="100%" alt="Service">
+                        </div>
+                        <h3>Service</h3>
+                        <p>Our dedicated staff is committed to providing attentive and personalized service to every guest.</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <img src="./assets/tradition.jpg" width="100%" alt="Tradition">
+                        </div>
+                        <h3>Tradition</h3>
+                        <p>We honor traditional recipes and hospitality practices while incorporating modern innovations.</p>
+                    </div>
+                </div>
+
+                <div class="team-section">
+                    <div class="section-title">
+                        <h2>Our Team</h2>
+                        <p>The people behind Meenakshi Inn</p>
+                    </div>
+
+                    <div class="team-members">
+                        <div class="team-member">
+                            <!--<div class="member-image">
+                                <img src="https://via.placeholder.com/200" alt="Devesh">
+                            </div> -->
+                            <h3>Devesh</h3>
+                            <p class="member-role">Executive Chef</p>
+                            <p>With over 20 years of culinary experience, Chef Rajiv brings his passion for traditional flavors to our kitchen.</p>
+                        </div>
+
+                        <div class="team-member">
+                            <!--<div class="member-image">
+                                <img src="https://via.placeholder.com/200" alt="Santosh">
+                            </div>-->
+                            <h3>Santosh</h3>
+                            <p class="member-role">Hotel Manager</p>
+                            <p>Priya ensures that every aspect of your stay exceeds expectations with her attention to detail.</p>
+                        </div>
+
+                        <div class="team-member">
+                            <!--<div class="member-image">
+                                <img src="https://via.placeholder.com/200" alt="charan">
+                            </div>-->
+                            <h3>charan</h3>
+                            <p class="member-role">Head Baker</p>
+                            <p>Anand creates delicious pastries and breads that have become the signature of our bakery.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="page">
+            <div class="page-header" id="contactlayout">
+                <div class="container">
+                    <h1>Contact Us</h1>
+                    <p>Get in touch with us</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Our Information</h2>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <img src="./assets/location.png" width="30px" alt="Location">
+                            </div>
+                            <div class="info-text">
+                                <h3>Address</h3>
+                                <p>123 Temple Street, Madurai, Tamil Nadu, India</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <img src="./assets/phone.png" width="30px" alt="Phone">
+                            </div>
+                            <div class="info-text">
+                                <h3>Phone</h3>
+                                <p>+91 9876 543 210</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <img src="./assets/email.png" width="30px" alt="Email">
+                            </div>
+                            <div class="info-text">
+                                <h3>Email</h3>
+                                <p>info@meenakshiinn.com</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <img src="./assets/clock.png" width="30px" alt="Hours">
+                            </div>
+                            <div class="info-text">
+                                <h3>Hours</h3>
+                                <p>Hotel: 24/7</p>
+                                <p>Restaurant: 7:00 AM - 11:00 PM</p>
+                                <p>Bakery: 6:00 AM - 10:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <h2>Send us a Message</h2>
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn primary-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <h2>Find Us</h2>
+                    <div id="map">
+                        <!-- Map will be loaded here via API -->
+                        <div class="map-placeholder">Map Loading...</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Login Page -->
+        <section id="login" class="page">
+            <div class="auth-container">
+                <div class="auth-box">
+                    <div class="auth-header">
+                        <h2>Login to Your Account</h2>
+                        <p>Welcome back to Meenakshi Inn</p>
+                    </div>
+
+                    <div class="auth-tabs">
+                        <button class="auth-tab active" data-tab="login-form">Login</button>
+                        <button class="auth-tab" data-tab="register-form">Register</button>
+                    </div>
+
+                    <div class="auth-content">
+                        <form id="login-form" class="auth-form active">
+                            <div class="form-group">
+                                <label for="login-email">Email</label>
+                                <input type="email" id="login-email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="login-password">Password</label>
+                                <input type="password" id="login-password" name="password" required>
+                            </div>
+
+                            <div class="form-group remember-me">
+                                <input type="checkbox" id="remember-me" name="remember-me">
+                                <label for="remember-me">Remember me</label>
+                                <a href="#" class="forgot-password">Forgot Password?</a>
+                            </div>
+
+                            <button type="submit" class="btn primary-btn">Login</button>
+
+                            <div class="social-login">
+                                <p>Or login with</p>
+                                <div class="social-buttons">
+                                    <button type="button" class="social-btn google">Google</button>
+                                    <button type="button" class="social-btn facebook">Facebook</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <form id="register-form" class="auth-form">
+                            <div class="form-group">
+                                <label for="register-name">Full Name</label>
+                                <input type="text" id="register-name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="register-email">Email</label>
+                                <input type="email" id="register-email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="register-password">Password</label>
+                                <input type="password" id="register-password" name="password" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="register-confirm-password">Confirm Password</label>
+                                <input type="password" id="register-confirm-password" name="confirm-password" required>
+                            </div>
+
+                            <div class="form-group terms">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms">I agree to the <a href="#">Terms and Conditions</a></label>
+                            </div>
+
+                            <button type="submit" class="btn primary-btn">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Room Booking Page -->
+        <section id="room-booking" class="page">
+            <div class="page-header">
+                <div class="container">
+                    <h1>Book a Room</h1>
+                    <p>Reserve your stay at Meenakshi Inn</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="booking-container">
+                    <div class="booking-form-container">
+                        <h2>Reservation Details</h2>
+                        <form id="booking-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="check-in">Check-in Date</label>
+                                    <input type="date" id="check-in" name="check-in" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="check-out">Check-out Date</label>
+                                    <input type="date" id="check-out" name="check-out" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="adults">Adults</label>
+                                    <select id="adults" name="adults" required>
+                                        <option value="1">1</option>
+                                        <option value="2" selected>2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="children">Children</label>
+                                    <select id="children" name="children">
+                                        <option value="0" selected>0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="room-type">Room Type</label>
+                                <select id="room-type" name="room-type" required>
+                                    <option value="">Select Room Type</option>
+                                    <option value="standard">Standard Room</option>
+                                    <option value="deluxe">Deluxe Room</option>
+                                    <option value="executive">Executive Suite</option>
+                                    <option value="presidential">Presidential Suite</option>
+                                </select>
+                            </div>
+
+                            <div id="selected-room-details" class="hidden">
+                                <div class="selected-room">
+                                    <img src="/placeholder.svg" alt="Room Image" id="selected-room-image">
+                                    <div class="selected-room-info">
+                                        <h3 id="selected-room-name"></h3>
+                                        <p id="selected-room-description"></p>
+                                        <p class="selected-room-price">Price: <span id="selected-room-price"></span>/night</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3>Guest Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="guest-name">Full Name</label>
+                                    <input type="text" id="guest-name" name="guest-name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="guest-email">Email</label>
+                                    <input type="email" id="guest-email" name="guest-email" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="guest-phone">Phone</label>
+                                    <input type="tel" id="guest-phone" name="guest-phone" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="guest-address">Address</label>
+                                    <input type="text" id="guest-address" name="guest-address" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="special-requests">Special Requests</label>
+                                <textarea id="special-requests" name="special-requests" rows="3"></textarea>
+                            </div>
+
+                            <div class="booking-summary">
+                                <h3>Booking Summary</h3>
+                                <div class="summary-item">
+                                    <span>Check-in:</span>
+                                    <span id="summary-check-in">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Check-out:</span>
+                                    <span id="summary-check-out">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Nights:</span>
+                                    <span id="summary-nights">0</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Room Type:</span>
+                                    <span id="summary-room-type">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Room Price:</span>
+                                    <span id="summary-room-price">₹0</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Taxes & Fees:</span>
+                                    <span id="summary-taxes">₹0</span>
+                                </div>
+                                <div class="summary-item total">
+                                    <span>Total:</span>
+                                    <span id="summary-total">₹0</span>
+                                </div>
+                            </div>
+
+                            <div class="payment-options">
+                                <h3>Payment Method</h3>
+                                <div class="payment-methods">
+                                    <div class="payment-method">
+                                        <input type="radio" id="credit-card" name="payment-method" value="credit-card" checked>
+                                        <label for="credit-card">Credit Card</label>
+                                    </div>
+                                    <div class="payment-method">
+                                        <input type="radio" id="debit-card" name="payment-method" value="debit-card">
+                                        <label for="debit-card">Debit Card</label>
+                                    </div>
+                                    <div class="payment-method">
+                                        <input type="radio" id="upi" name="payment-method" value="upi">
+                                        <label for="upi">UPI</label>
+                                    </div>
+                                    <div class="payment-method">
+                                        <input type="radio" id="pay-at-hotel" name="payment-method" value="pay-at-hotel">
+                                        <label for="pay-at-hotel">Pay at Hotel</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group terms">
+                                <input type="checkbox" id="booking-terms" name="booking-terms" required>
+                                <label for="booking-terms">I agree to the <a href="#">Terms and Conditions</a></label>
+                            </div>
+
+                            <button type="submit" class="btn primary-btn">Confirm Booking</button>
+                        </form>
+                    </div>
+
+                    <div class="booking-info">
+                        <div class="info-box">
+                            <h3>Why Book With Us?</h3>
+                            <ul>
+                                <li>Best rate guarantee</li>
+                                <li>Free cancellation up to 24 hours before check-in</li>
+                                <li>No hidden fees</li>
+                                <li>24/7 customer support</li>
+                                <li>Secure payment options</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <h3>Need Help?</h3>
+                            <p>Contact our reservation team:</p>
+                            <p>Phone: +91 9876 543 210</p>
+                            <p>Email: reservations@meenakshiinn.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Table Reservation Page -->
+        <section id="table-reservation" class="page">
+            <div class="page-header">
+                <div class="container">
+                    <h1>Reserve a Table</h1>
+                    <p>Book your dining experience at Meenakshi Inn</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="reservation-container">
+                    <div class="reservation-form-container">
+                        <h2>Reservation Details</h2>
+                        <form id="table-reservation-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="reservation-date">Date</label>
+                                    <input type="date" id="reservation-date" name="reservation-date" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="reservation-time">Time</label>
+                                    <select id="reservation-time" name="reservation-time" required>
+                                        <option value="">Select Time</option>
+                                        <option value="12:00">12:00 PM</option>
+                                        <option value="12:30">12:30 PM</option>
+                                        <option value="13:00">1:00 PM</option>
+                                        <option value="13:30">1:30 PM</option>
+                                        <option value="14:00">2:00 PM</option>
+                                        <option value="19:00">7:00 PM</option>
+                                        <option value="19:30">7:30 PM</option>
+                                        <option value="20:00">8:00 PM</option>
+                                        <option value="20:30">8:30 PM</option>
+                                        <option value="21:00">9:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="party-size">Number of Guests</label>
+                                    <select id="party-size" name="party-size" required>
+                                        <option value="1">1 Person</option>
+                                        <option value="2" selected>2 People</option>
+                                        <option value="3">3 People</option>
+                                        <option value="4">4 People</option>
+                                        <option value="5">5 People</option>
+                                        <option value="6">6 People</option>
+                                        <option value="7+">7+ People</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="dining-area">Dining Area</label>
+                                    <select id="dining-area" name="dining-area" required>
+                                        <option value="">Select Area</option>
+                                        <option value="indoor">Indoor</option>
+                                        <option value="outdoor">Outdoor</option>
+                                        <option value="private">Private Dining</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <h3>Contact Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="reservation-name">Full Name</label>
+                                    <input type="text" id="reservation-name" name="reservation-name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="reservation-email">Email</label>
+                                    <input type="email" id="reservation-email" name="reservation-email" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="reservation-phone">Phone</label>
+                                    <input type="tel" id="reservation-phone" name="reservation-phone" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="reservation-occasion">Occasion (Optional)</label>
+                                    <select id="reservation-occasion" name="reservation-occasion">
+                                        <option value="">Select Occasion</option>
+                                        <option value="birthday">Birthday</option>
+                                        <option value="anniversary">Anniversary</option>
+                                        <option value="business">Business Meal</option>
+                                        <option value="date">Date Night</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reservation-requests">Special Requests</label>
+                                <textarea id="reservation-requests" name="reservation-requests" rows="3"></textarea>
+                            </div>
+
+                            <div id="pre-order-section">
+                                <h3>Pre-order Items (Optional)</h3>
+                                <p>You can pre-order items from our menu to save time during your visit.</p>
+                                <div id="pre-order-items">
+                                    <!-- Pre-ordered items will appear here -->
+                                    <p class="empty-pre-order-message">No items pre-ordered yet</p>
+                                </div>
+                                <button type="button" class="btn secondary-btn" id="add-pre-order-btn">Add Items from Menu</button>
+                            </div>
+
+                            <div class="reservation-policy">
+                                <h3>Reservation Policy</h3>
+                                <ul>
+                                    <li>Reservations are held for 15 minutes past the scheduled time.</li>
+                                    <li>For parties of 7 or more, please call us directly.</li>
+                                    <li>Cancellations should be made at least 4 hours in advance.</li>
+                                </ul>
+                            </div>
+
+                            <div class="form-group terms">
+                                <input type="checkbox" id="reservation-terms" name="reservation-terms" required>
+                                <label for="reservation-terms">I agree to the reservation policy</label>
+                            </div>
+
+                            <button type="submit" class="btn primary-btn">Confirm Reservation</button>
+                        </form>
+                    </div>
+
+                    <div class="reservation-info">
+                        <div class="info-box">
+                            <h3>Restaurant Hours</h3>
+                            <p><strong>Lunch:</strong> 12:00 PM - 3:00 PM</p>
+                            <p><strong>Dinner:</strong> 7:00 PM - 11:00 PM</p>
+                            <p><strong>Bakery:</strong> 6:00 AM - 10:00 PM</p>
+                        </div>
+
+                        <div class="info-box">
+                            <h3>Contact Us</h3>
+                            <p>For immediate assistance or large party reservations:</p>
+                            <p>Phone: +91 9876 543 210</p>
+                            <p>Email: dining@meenakshiinn.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal" id="booking-confirmation-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Booking Confirmed!</h2>
+            </div>
+            <div class="modal-body">
+                <div class="confirmation-icon">
+                    <img src="https://via.placeholder.com/100" alt="Confirmation">
+                </div>
+                <p>Your room has been successfully booked. A confirmation email has been sent to your email address.</p>
+                <div class="confirmation-details">
+                    <div class="confirmation-item">
+                        <span>Booking Reference:</span>
+                        <span id="booking-reference"></span>
+                    </div>
+                    <div class="confirmation-item">
+                        <span>Check-in:</span>
+                        <span id="confirmation-check-in"></span>
+                    </div>
+                    <div class="confirmation-item">
+                        <span>Check-out:</span>
+                        <span id="confirmation-check-out"></span>
+                    </div>
+                    <div class="confirmation-item">
+                        <span>Room Type:</span>
+                        <span id="confirmation-room-type"></span>
+                    </div>
+                    <div class="confirmation-item">
+                        <span>Total Amount:</span>
+                        <span id="confirmation-total"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn primary-btn" id="close-confirmation">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="reservation-confirmation-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Table Reserved!</h2>
+            </div>
+            <div class="modal-body">
+                <div class="confirmation-icon">
+                    <img src="https://via.placeholder.com/100" alt="Confirmation">
+                </div>
+                <p>Your table has been successfully reserved. A confirmation email has been sent to your email address.</p>
+                <div class="confirmation-details">
+                    <div class="confirmation-item">
+                        <span>Reservation Reference:</span>
+                        <span id="reservation-reference"></span>
+                    </div>
+                    <div class="confirmation-item">
+                        <span>Date:</span>
+                        <span id="confirmation-date"></span>
+                    </div>
+                    <div class="confirmation-item">
+                        <span>Time:</span>
+                        <span id="confirmation-time"></span>
+                    </div>
+                    <div class="confirmation-item">
+                        <span>Party Size:</span>
+                        <span id="confirmation-party-size"></span>
+                    </div>
+                    <div class="confirmation-item">
+                        <span>Dining Area:</span>
+                        <span id="confirmation-dining-area"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn primary-btn" id="close-reservation-confirmation">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="menu-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Select Menu Items</h2>
+            </div>
+            <div class="modal-body">
+                <div class="menu-modal-tabs">
+                    <button class="menu-modal-tab active" data-tab="modal-main-course">Main Course</button>
+                    <button class="menu-modal-tab" data-tab="modal-starters">Starters</button>
+                    <button class="menu-modal-tab" data-tab="modal-desserts">Desserts</button>
+                    <button class="menu-modal-tab" data-tab="modal-beverages">Beverages</button>
+                </div>
+                <div class="menu-modal-content">
+                    <!-- Menu items will be loaded here -->
+                </div>
+                <div class="modal-cart">
+                    <h3>Selected Items</h3>
+                    <div id="modal-cart-items">
+                        <p class="empty-cart-message">No items selected</p>
+                    </div>
+                    <div class="modal-cart-total">
+                        <span>Total:</span>
+                        <span id="modal-cart-total">₹0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn secondary-btn" id="cancel-pre-order">Cancel</button>
+                <button class="btn primary-btn" id="confirm-pre-order">Confirm Selection</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- React Components Container -->
+    <div id="react-components-container">
+        <div id="weather-widget-container"></div>
+        <div id="calorie-calculator-container"></div>
+        <div id="room-availability-container"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Meenakshi Inn</h2>
+                    <p>Luxury Hotel & Restaurant</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#rooms">Rooms</a></li>
+                            <li><a href="#restaurant">Restaurant</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#room-booking">Room Booking</a></li>
+                            <li><a href="#table-reservation">Table Reservation</a></li>
+                            <li><a href="#restaurant">Dining</a></li>
+                            <li><a href="#restaurant">Bakery</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact</h3>
+                        <ul>
+                            <li>123 Temple Street, Madurai</li>
+                            <li>Tamil Nadu, India</li>
+                            <li>Phone: +91 9876 543 210</li>
+                            <li>Email: info@meenakshiinn.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">
+                            <img src="./assets/facebook.png" width="100%" alt="Facebook">
+                        </a>
+                        <a href="#" class="social-icon">
+                            <img src="./assets/instagram.png" width="100%" alt="Instagram">
+                        </a>
+                        <a href="#" class="social-icon">
+                            <img src="./assets/twitter.png" width="100%" alt="Twitter">
+                        </a>
+                        <a href="#" class="social-icon">
+                            <img src="./assets/youtube.png" width="100%" alt="YouTube">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Meenakshi Inn. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script type="text/babel" src="react-components.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>
+
